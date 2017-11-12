@@ -1,446 +1,480 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8" />
-		<title>湘潭大学吉他协会</title>
-		<style>
-			body{
-				width:980px;
-			    margin: auto;
+<html><head>
+		<meta charset="UTF-8">
+		<title>我的小店</title>
+		<style type="text/css">
+			p{
+				font-size:25px;
+				text-align: center;
+				
 			}
-			*{
-				margin: 0;
-				padding: 0;
+			.main{
+			
 			}
-			.start{
-				width: 980px;
-				height: 40px;
-				margin: auto;
-				text-align: right;
-				margin-bottom: 2px;
+			.picture{
+				display: flex;
 			}
-			.login{
-				color: red;
-				font-weight: bold;
-				display: inline;
+			.picture img{
+				width:1600px;
+				height:100px
 			}
-			.begin{
-				display: block;
-				color: black;
-				text-decoration: none;
-				font-weight: bold;
-				display: inline;
-			}
-			.begin a:hover{
-				color: red;
+			.container1{
+				margin-top:5px;
+				display: flex;
+				margin-bottom:30px;
+				/*height: 150px;*/
+				justify-content:space-around;
+				flex-wrap: wrap;
+				
 			}
 			.box1{
-				width: 980px;
-				height: 200px;
+				width: 250px;
+				height:300px ;
+				background-color:yellow;
+				border: 2px solid black;
 			}
-			.box1first{
-				height: 230px;
-				width: 280px;
-				float: left;
-				text-align: center;
+
+			@media (min-width:600px){
+				.container1 {
+					flex-wrap: nowrap;
+					flex-grow: 1;
+				}
+		        }
+		     
+			.container2{	
+				justify-content: space-around;
+				display: flex;
+				flex-wrap: wrap;
 			}
-			.box1second{
-				width: 670px;
-				height: 200px;
-				float: right;
+			/*@media (min-width:600px){
+				.container2 div{
+					
+					/*flex-grow: 1;*/	
+				/*	flex-basis: 24%;*/
+						flex-wrap: nowrap;
+					flex-grow: 1;
+				}
+		        }*/
+		     @media only screen and (min-width: 600PX) {
+		     	.container1{
+				flex-wrap:nowrap;	
+			    }
+			    }
+		     @media only screen (max-width: 600px) {
+		     	.container1{
+			    margin-bottom: 480px;
+			    flex-wrap: wrap;
+			    align-items: center;	    
 			}
-			.box1second1{
-				width: 670px;
-				height: 51px;
-				display: inline-block;
-			}
-			h1:before{
-				content: "湘潭大学吉他协会，";
-				color: red;
-				font-size: x-large;
-			}
-			.box1second2{
-				width: 670px;
-				height: 149px;
-				text-align: center;
-			}
-			.box2{
-				list-style: none;
-				margin: 0 auto;
-				width: 980px;
-				background-color: #c00;
-				overflow: hidden;
-			}
-			.li1{
-				float: left;
-				height: 42px;
-			}
-			.li1 a{
-				text-decoration: none;
-				display: block;
-				color: white;
-				font-weight: bold;
-				width: 326px;
-				text-align: center;
-				line-height: 42px;
-			}
-			.li1 a:hover{
-				background-color: #900;
-			}
-			.box3{
-				width: 980px;
-				height: 500px;
-			}
-			.introduce1{
-				width: 490px;
-				height: 500px;
-				float: left;
-				border-bottom:2px solid darkgray;
-				border-right: 1px solid darkgray;
-			}
-			.introduce1-title{
-				color: #c00;
-				font-size: x-large;
-				border-bottom: 2px solid darkgray;
-				padding-bottom: 5px;
-				margin-top: 5px;
-			}
-			.introduce1-picture{
-				width: 490px;
-				height: 200px;
-				text-align: center;
-				margin-top: 5px;
-			}
-			.introduce1-text{
-				width: 490px;
-				height: 300px;
-			}
-			.introduce1-text p1:before{
-				content: "吉他,";
-				font-size: x-large;
-				color: red;
-			}
-			.introduce1-text p2:before{
-				content: "吉他，";
-				font-size: x-large;
-                color: red;
-			}
-			.introduce2{
-				width: 475px;
-				height: 500px;
-				float: right;
-				border-bottom:2px solid darkgray;
-			}
-			.introduce2-title{
-				color: #c00;
-				font-size: x-large;
-				border-bottom: 2px solid darkgray;
-				padding-bottom: 5px;
-				margin-top: 5px;
-			}
-			.introduce2-picture{
-				width: 480px;
-				height: 300px;
-				text-align: center;
-				margin-top: 5px;
-			}
-			.introduce2-text p3:before{
-				content: "尤克里里，";
-				font-size: x-large;
-				color: red;
-			}
-			.li2{
-				display: block;
-			}
-			.li2 a{
-				text-decoration: none;
-				display: block;
-				font-weight: bolder;
-				color: black;
-			}
-			.li2 a:hover{
-				color: red;
-				font-size: x-large;
-			}
-			.box4{
-				width: 640px;
-				height: 555px;
-				float: left;
-			}
-			.box4left{
-				width: 310px;
-				height: 550px;
-				border-bottom:2px solid darkgray ;
-				text-align: center;
-				float: left;
-				border-right: 1px solid darkgray;
-			}
-			.postbar{
-				width: 300px;
-				height: 300px;
-				border-bottom: 2px solid darkgray;
-				text-align: center;
-				background-color: aquamarine;
-			}
-			.postbartitle{
-				color: #C00;
-				font-size: x-large;
-				border-bottom: 2px solid darkgray;
-				padding-bottom: 5px;
-				margin-top: 1px;
-			}
-			.li3{
-				display: block;
-			}
-			.li3 a{
-				text-decoration: none;
-				display: block;
-				font-weight: bold;
-				color: black;
-			}
-			.li3 a:hover{
-				color: red;
-				font-size: x-large;
-			}
-			.box4middle{
-				width: 310px;
-				height: 550px;
-				margin-left: auto;
-				margin-right: auto;
-				border-bottom:2px solid darkgray ;
-				border-right: 1px solid darkgray;
-				float: right;
-			}
-			.box4middlenews{
-				width: 300px;
-				height: 320px;
-			}
-			.box4middlenewstitle{
-				width: 300px;
-				height: 45px;
-				border-bottom: 1px solid darkgray;
-				color: #c00;
-				font-weight: bold;
-				font-size: x-large;
-				line-height: 45px;	
-			}
-			.news1{
-				display: block;
-				text-decoration: none;
-				color: black;
-				border-bottom: 1px solid darkgray;
-			}
-			.news2{
-				display: block;
-				text-decoration: none;
-				color: black;
-				border-bottom: 1px solid darkgray;
-			}
-			.news3{
-				display: block;
-				text-decoration: none;
-				color: black;
-				border-bottom: 1px solid darkgray;
-			}
-			.news4{
-				display: block;
-				text-decoration: none;
-				color: black;
-			}
-			a:hover{
-				color: red;
-			}
-			.box5{
-				float: right;
-				width: 338px;
-				height: 1000px;
-			}
-			.box5picture1{
-				width: 338px;
-				height: 300px;
-				text-align: center;
-				margin-top: 2px;
-			}
-			.box5text{
-				font-weight: bold;
-				color: black;
-				text-align: center;
-				border-bottom: 1px solid darkgray;
-				margin-top: 2px;
-				padding-bottom: 2px;
-			}
-			.box5picture2{
-				width: 338px;
-				height: 230px;
-				text-align: center;
-				margin-top: 5px;
-			}
-			.box5picture3{
-				width: 338px;
-				height: 338px;
-				text-align: center;
-				margin-top: 5px;
-			}
+		    }
 			.box6{
-				width: 260px;
-				height: 550px;
-				float: left;
+				width:325px;
+				height: 360px;
+				background-color:white;
+				margin-bottom:3px;
+				border: 2px solid black;
+				
 			}
-			.box6title{
-				width: 260px;
-				height: 45px;
-				line-height: 45px;
-				border-bottom: 1px solid darkgray;
-				color: red;
+			.container3{
+				/*width: 980px;*/
+				justify-content: space-around;
+				display: flex;
+				flex-wrap: wrap;
 			}
-			.box6number{
-				font-size: x-large;
-				color: dimgray;
-				font-weight: bolde;
-				width: 260px;
-				height: 40px;
+			@media (min-width:600px){
+				.container3 div {
+					/*flex-wrap: nowrap;*/
+					flex-basis: 24%;
+				}
+		        }
+		     
+			.yp{
+				width: 325px;
+				height:360px;
+				margin-bottom: 3px;
+				background-color:white;
+				border: 2px solid black;
 			}
-			.box6number:hover{
-				color: red;
+			.container4{
+			
+				justify-content: space-around;
+				display: flex;
+				flex-wrap: wrap;
 			}
-			.box7{
-				width: 380px;
-				height: 400px;
-				overflow: hidden;
-				float:right ;
+		    @media (min-width:600px){
+				.container4 div{
+					flex-basis: 24%;
+				}
+		        }
+		     
+			.ly{
+				width: 325px;
+				height:360px;
+				margin-bottom: 3px;
+				background-color:white;
+				border: 2px solid black;
+			}
+			#jiage{
+				margin-top: -35px;
+			}
+			.box1 img{
+				width: 250px;
+				height: 300px;
 			}
 		</style>
 	</head>
 	<body>
-		<div class="start">
-			<span class="login">您还未登录！</span>
-		    |
-		    <a class="begin" href="#">注册</a>
-		    |
-		    <a class="begin" href="#">登录</a>
+		<div>
+			<p>你还为登录！&nbsp;&nbsp;|
+			<a href="#" >登录&nbsp;&nbsp;|</a>
+			<a href="#" >注册&nbsp;&nbsp;|</a>
+			<a href="#" >搜索&nbsp;&nbsp;|</a>
+			<input type="text"  name="passwordtwo"  class="search" value="查询">
+			</p> 
 		</div>
-		<div class="box1">
-		    <div class="box1first">
-		        <img src="img/IMG_1248.PNG" />
+		<div class="main">
+			<div class="picture"><img src="img/QQ图片20171112212326.png"></div>
+			<div class="container1">
+				<div class="box1"><img src="img/TB1sz3nXPgy_uJjSZJnXXbuOXXa_!!0-item_pic.jpg_430x430q90.jpg"></div>
+				<div class="box1"><img src="img/TB1oLEdcv6H8KJjSspmXXb2WXXa_!!0-item_pic.jpg_430x430q90.jpg"></div>
+				<div class="box1"><img src="img/TB1o53kXQfb_uJkHFCcXXXagFXa_!!0-item_pic.jpg_430x430q90.jpg"></div>
+				<div class="box1"><img src="img/TB1eeb9axk98KJjSZFoXXXS6pXa_!!0-item_pic.jpg_430x430q90.jpg"></div>
+				<div class="box1"><img src="img/TB1bznBctrJ8KJjSspaXXXuKpXa_!!0-item_pic.jpg_430x430q90.jpg"></div>
+			</div>
+			<p>新款上架</p>
+			<div class="container2">
+				<div class="box6">
+					<div><img src="img/TB2AUykXdbJ8KJjy1zjXXaqapXa_!!1645345396.jpg_430x430q90.jpg" width="325px" height="320px"></div>                                
+					<div id="jiage">
+					<h6>四件套<br>
+					<img src="img/p4.png">&nbsp;&nbsp;&nbsp;
+					<font size="5px" color="#A52A2A">¥139</font>
+					</h6>
+					</div>
+				</div>
+				<div class="box6">
+					<div><img src="img/TB2be2jngMPMeJjy1XdXXasrXXa_!!1645345396.jpg_430x430q90.jpg" width="325px" height="320px"></div>                                
+					<div id="jiage">
+					<h6>四件套<br>
+					<img src="img/p4.png">&nbsp;&nbsp;&nbsp;
+					<font size="5px" color="#A52A2A">¥139</font>
+					</h6>
+					</div>
+				</div>
+				<div class="box6">
+					<div><img src="img/TB2CaBUkEl7MKJjSZFDXXaOEpXa_!!1645345396.jpg_430x430q90.jpg" width="325px" height="320px"></div>                                
+					<div id="jiage">
+					<h6>四件套<br>
+					<img src="img/p4.png">&nbsp;&nbsp;&nbsp;
+					<font size="5px" color="#A52A2A">¥139</font>
+					</h6>
+					</div>
+				</div>
+				<div class="box6">
+					<div><img src="img/TB2CSrQXsic_eJjSZFnXXXVwVXa_!!1645345396.jpg_430x430q90.jpg" width="325px" height="320px"></div>                                
+					<div id="jiage">
+					<h6>四件套<br>
+					<img src="img/p4.png">&nbsp;&nbsp;&nbsp;
+					<font size="5px" color="#A52A2A">¥139</font>
+					</h6>
+					</div>
+				</div>
+				<div class="box6">
+					<div><img src="img/TB2FWqgivBNTKJjSszeXXcu2VXa_!!1645345396.jpg_430x430q90.jpg" width="325px" height="320px"></div>                                
+					<div id="jiage">
+					<h6>四件套<br>
+					<img src="img/p4.png">&nbsp;&nbsp;&nbsp;
+					<font size="5px" color="#A52A2A">¥139</font>
+					</h6>
+					</div>
+				</div>
+				<div class="box6">
+					<div><img src="img/TB2gkTsbj3z9KJjy0FmXXXiwXXa_!!1645345396.jpg_430x430q90.jpg" width="325px" height="320px"></div>                                
+					<div id="jiage">
+					<h6>四件套<br>
+					<img src="img/p4.png">&nbsp;&nbsp;&nbsp;
+					<font size="5px" color="#A52A2A">¥139</font>
+					</h6>
+					</div>
+				</div>
+				<div class="box6">
+					<div><img src="img/TB2hAr7XsrI8KJjy0FhXXbfnpXa_!!1645345396.jpg_430x430q90.jpg" width="325px" height="320px"></div>                                
+					<div id="jiage">
+					<h6>四件套<br>
+					<img src="img/p4.png">&nbsp;&nbsp;&nbsp;
+					<font size="5px" color="#A52A2A">¥139</font>
+					</h6>
+					</div>
+				</div>
+				<div class="box6">
+					<div><img src="img/TB2Id_xg2BNTKJjSszcXXbO2VXa_!!1645345396.jpg_430x430q90.jpg" width="325px" height="320px"></div>                                
+					<div id="jiage">
+					<h6>四件套<br>
+					<img src="img/p4.png">&nbsp;&nbsp;&nbsp;
+					<font size="5px" color="#A52A2A">¥139</font>
+					</h6>
+					</div>
+				</div>
+				<div class="box6">
+					<div><img src="img/TB2ispWXh285uJjSZFGXXXDmpXa_!!1645345396.jpg_430x430q90.jpg" width="325px" height="320px"></div>                                
+					<div id="jiage">
+					<h6>四件套<br>
+					<img src="img/p4.png">&nbsp;&nbsp;&nbsp;
+					<font size="5px" color="#A52A2A">¥139</font>
+					</h6>
+					</div>
+				</div>
+				<div class="box6">
+					<div><img src="img/TB2M_3Och6I8KJjSszfXXaZVXXa_!!1645345396.jpg_430x430q90.jpg" width="325px" height="320px"></div>                                
+					<div id="jiage">
+					<h6>四件套<br>
+					<img src="img/p4.png">&nbsp;&nbsp;&nbsp;
+					<font size="5px" color="#A52A2A">¥139</font>
+					</h6>
+					</div>
+				</div>
+				<div class="box6">
+					<div><img src="img/TB2M_3Och6I8KJjSszfXXaZVXXa_!!1645345396.jpg_430x430q90.jpg" width="325px" height="320px"></div>                                
+					<div id="jiage">
+					<h6>四件套<br>
+					<img src="img/p4.png">&nbsp;&nbsp;&nbsp;
+					<font size="5px" color="#A52A2A">¥139</font>
+					</h6>
+					</div>
+				</div>
+				<div class="box6">
+					<div><img src="img/TB2n3IybdfJ8KJjy0FeXXXKEXXa_!!1645345396.jpg_430x430q90.jpg" width="325px" height="320px"></div>                                
+					<div id="jiage">
+					<h6>四件套<br>
+					<img src="img/p4.png">&nbsp;&nbsp;&nbsp;
+					<font size="5px" color="#A52A2A">¥139</font>
+					</h6>
+					</div>
+				</div>
+			</div>
+			<p>打折促销</p>
+			<div class="container3">  
+		    <div class="yp">
+		    	<div><img src="img/TB2ok9HXlY85uJjSZPcXXaGGpXa_!!1645345396.jpg_430x430q90.jpg" width="325px" height="320px"></div>                                
+					<div id="jiage">
+					<h6>四件套<br>
+					<img src="img/p4.png">&nbsp;&nbsp;&nbsp;
+					<font size="5px" color="#A52A2A">¥98</font>
+					</h6>
+					</div>
 		    </div>
-		    <div class="box1second">
-		        <div class="box1second1">
-		        	<h1 style="font-size: larger;color: #000000;" align="center">吉协，一个梦想起航的地方。</h1>
-		        </div>
-		        <div class="box1second2">
-		        	<img src="img/IMG_1269_看图王.png" />
-		        </div>
+		    <div class="yp">
+		    	<div><img src="img/TB2osOEcznD8KJjSspbXXbbEXXa_!!1645345396.jpg_430x430q90.jpg" width="325px" height="320px"></div>                                
+					<div id="jiage">
+					<h6>四件套<br>
+					<img src="img/p4.png">&nbsp;&nbsp;&nbsp;
+					<font size="5px" color="#A52A2A">¥98</font>
+					</h6>
+					</div>
+		    </div>
+		    <div class="yp">
+		    	<div><img src="img/TB2PeY6XDTI8KJjSsphXXcFppXa_!!1645345396.jpg_430x430q90.jpg" width="325px" height="320px"></div>                                
+					<div id="jiage">
+					<h6>蒙古酸奶<br>
+					<img src="img/p4.png">&nbsp;&nbsp;&nbsp;
+					<font size="5px" color="#A52A2A">¥98</font>
+					</h6>
+					</div>
+		    </div>
+		    <div class="yp">
+		    	<div><img src="img/TB2qh68Xv2H8KJjy0FcXXaDlFXa_!!1645345396.jpg_430x430q90.jpg" width="325px" height="320px"></div>                                
+					<div id="jiage">
+					<h6>四件套<br>
+					<img src="img/p4.png">&nbsp;&nbsp;&nbsp;
+					<font size="5px" color="#A52A2A">¥98</font>
+					</h6>
+					</div>
+		    </div>
+		    <div class="yp">
+		    	<div><img src="img/TB2reeFcCfD8KJjSszhXXbIJFXa_!!1645345396.jpg_430x430q90.jpg" width="325px" height="320px"></div>                                
+					<div id="jiage">
+					<h6>四件套<br>
+					<img src="img/p4.png">&nbsp;&nbsp;&nbsp;
+					<font size="5px" color="#A52A2A">¥98</font>
+					</h6>
+					</div>
+		    </div>
+		    <div class="yp">
+		    	<div><img src="img/TB2RvkMcnnI8KJjSszgXXc8ApXa_!!1645345396.jpg_430x430q90.jpg" height="320px"></div>                                
+					<div id="jiage">
+					<h6>四件套<br>
+					<img src="img/p4.png">&nbsp;&nbsp;&nbsp;
+					<font size="5px" color="#A52A2A">¥98</font>
+					</h6>
+					</div>
+		    </div>
+		    
+		    <div class="yp">
+		    	<div><img src="img/TB2S45JjaigSKJjSsppXXabnpXa_!!1645345396.jpg_430x430q90.jpg" width="325px" height="320px"></div>                                
+					<div id="jiage">
+					<h6>四件套<br>
+					<img src="img/p4.png">&nbsp;&nbsp;&nbsp;
+					<font size="5px" color="#A52A2A">¥98</font>
+					</h6>
+					</div>
+		    </div>
+		    <div class="yp">
+		    	<div><img src="img/TB2TSLWivNNTKJjSspcXXb4KVXa_!!1645345396.jpg_430x430q90.jpg" width="325px" height="320px"></div>                                
+					<div id="jiage">
+					<h6>四件套<br>
+					<img src="img/p4.png">&nbsp;&nbsp;&nbsp;
+					<font size="5px" color="#A52A2A">¥98</font>
+					</h6>
+					</div>
+		    </div>
+		    <div class="yp">
+		    	<div><img src="img/TB2TSLWivNNTKJjSspcXXb4KVXa_!!1645345396.jpg_430x430q90.jpg" width="325px" height="320px"></div>                                
+					<div id="jiage">
+					<h6>四件套<br>
+					<img src="img/p4.png">&nbsp;&nbsp;&nbsp;
+					<font size="5px" color="#A52A2A">¥98</font>
+					</h6>
+					</div>
+		    </div>
+		    <div class="yp">
+		    	<div><img src="img/TB2vnh_nbsTMeJjSsziXXcdwXXa_!!1645345396.jpg_430x430q90.jpg" width="325px" height="320px"></div>                                
+					<div id="jiage">
+					<h6>四件套<br>
+					<img src="img/p4.png">&nbsp;&nbsp;&nbsp;
+					<font size="5px" color="#A52A2A">¥98</font>
+					</h6>
+					</div>
+		    </div>
+		    <div class="yp">
+		    	<div><img src="img/TB2wBldcTnI8KJjSszgXXc8ApXa_!!1645345396.jpg_430x430q90.jpg" width="325px" height="320px"></div>                                
+					<div id="jiage">
+					<h6>四件套<br>
+					<img src="img/p4.png">&nbsp;&nbsp;&nbsp;
+					<font size="5px" color="#A52A2A">¥98</font>
+					</h6>
+					</div>
+		    </div>
+		    <div class="yp">
+		    	<div><img src="img/TB2XKNGctrJ8KJjSspaXXXuKpXa_!!1645345396.jpg_430x430q90.jpg" width="325px" height="320px"></div>                                
+					<div id="jiage">
+					<h6>四件套<br>
+					<img src="img/p4.png">&nbsp;&nbsp;&nbsp;
+					<font size="5px" color="#A52A2A">¥98</font>
+					</h6>
+					</div>	
+		    </div>
+		    </div>
+		    <p>冬季水晶绒</p>
+		    <div class="container4">
+		    <div class="ly">
+		    	<div><img src="img/TB2GtZ.bqagSKJjy0FgXXcRqFXa_!!1645345396.jpg_430x430q90.jpg" width="325px" height="320px"></div>                                
+					<div id="jiage">
+					<h6>四件套<br>
+					<img src="img/p4.png">&nbsp;&nbsp;&nbsp;
+					<font size="5px" color="#A52A2A">¥298</font>
+					</h6>
+					</div>	
+		    </div>
+		    <div class="ly">
+		    	<div><img src="img/TB2ReSGXNuaVKJjSZFjXXcjmpXa_!!1645345396.jpg_430x430q90.jpg" width="325px" height="320px"></div>                                
+					<div id="jiage">
+					<h6>四件套<br>
+					<img src="img/p4.png">&nbsp;&nbsp;&nbsp;
+					<font size="5px" color="#A52A2A">¥298</font>
+					</h6>
+					</div>	
+		    </div>
+		    <div class="ly">
+		    	<div><img src="img/TB2XEI4bzihSKJjy0FfXXbGzFXa_!!1645345396.jpg_430x430q90.jpg" width="325px" height="320px"></div>                                
+					<div id="jiage">
+					<h6>四件套<br>
+					<img src="img/p4.png">&nbsp;&nbsp;&nbsp;
+					<font size="5px" color="#A52A2A">¥298</font>
+					</h6>
+					</div>	
+		    </div>
+		    <div class="ly">
+		    	<div><img src="img/TB2xbO4ba_ST1JjSZFqXXcQxFXa_!!1645345396.jpg_430x430q90.jpg" width="325px" height="320px"></div>                                
+					<div id="jiage">
+					<h6>四件套<br>
+					<img src="img/p4.png">&nbsp;&nbsp;&nbsp;
+					<font size="5px" color="#A52A2A">¥298</font>
+					</h6>
+					</div>	
+		    </div>
+		    <div class="ly">
+		    	<div><img src="img/TB2xbO4ba_ST1JjSZFqXXcQxFXa_!!1645345396.jpg_430x430q90.jpg" width="325px" height="320px"></div>                                
+					<div id="jiage">
+					<h6>四件套<br>
+					<img src="img/p4.png">&nbsp;&nbsp;&nbsp;
+					<font size="5px" color="#A52A2A">¥298</font>
+					</h6>
+					</div>	
+		    </div>
+		    <div class="ly">
+		    	<div><img src="img/TB2ViUiXdXXWeJjSZFvXXa6lpXa_!!1645345396.jpg_430x430q90.jpg" width="325px" height="320px"></div>                                
+					<div id="jiage">
+					<h6>四件套<br>
+					<img src="img/p4.png">&nbsp;&nbsp;&nbsp;
+					<font size="5px" color="#A52A2A">¥298</font>
+					</h6>
+					</div>	
+		    </div>
+		    <div class="ly">
+		    	<div><img src="img/TB20gk.bqagSKJjy0FgXXcRqFXa_!!1645345396.jpg_430x430q90.jpg" width="325px" height="320px"></div>                                
+					<div id="jiage">
+					<h6>四件套<br>
+					<img src="img/p4.png">&nbsp;&nbsp;&nbsp;
+					<font size="5px" color="#A52A2A">¥298</font>
+					</h6>
+					</div>	
+		    </div>
+		    <div class="ly">
+		    	<div><img src="img/TB27vGefMMPMeJjy1XdXXasrXXa_!!1645345396.jpg_430x430q90.jpg" width="325px" height="320px"></div>                                
+					<div id="jiage">
+					<h6>四件套<br>
+					<img src="img/p4.四件套">&nbsp;&nbsp;&nbsp;
+					<font size="5px" color="#A52A2A">¥298</font>
+					</h6>
+					</div>	
+		    </div>
+		    <div class="ly">
+		    	<div><img src="img/TB2_qOja2NNTKJjSspkXXaeWFXa_!!1645345396.jpg_430x430q90.jpg" width="325px" height="320px"></div>                                
+					<div id="jiage">
+					<h6>四件套<br>
+					<img src="img/p4.png">&nbsp;&nbsp;&nbsp;
+					<font size="5px" color="#A52A2A">¥298</font>
+					</h6>
+					</div>	
+		    </div>
+		    <div class="ly">
+		    	<div><img src="img/TB2ckDIX_QMVeJjSZFMXXbVzpXa_!!1645345396.jpg_430x430q90.jpg" width="325px" height="320px"></div>                                
+					<div id="jiage">
+					<h6>四件套<br>
+					<img src="img/p4.png">&nbsp;&nbsp;&nbsp;
+					<font size="5px" color="#A52A2A">¥298</font>
+					</h6>
+					</div>	
+		    </div>
+		    <div class="ly">
+		    	<div><img src="img/TB2DIB4iVcJL1JjSZFOXXcWlXXa_!!1645345396.jpg_430x430q90.jpg" width="325px" height="320px"></div>                                
+					<div id="jiage">
+					<h6>四件套<br>
+					<img src="img/p4.png">&nbsp;&nbsp;&nbsp;
+					<font size="5px" color="#A52A2A">¥298</font>
+					</h6>
+					</div>	
+		    </div>
+		    <div class="ly">
+		    	<div><img src="img/TB2EyClfHsTMeJjy1zeXXcOCVXa_!!1645345396.jpg_430x430q90.jpg" width="325px" height="320px"></div>                                
+					<div id="jiage">
+					<h6>四件套<br>
+					<img src="img/p4.png">&nbsp;&nbsp;&nbsp;
+					<font size="5px" color="#A52A2A">¥298</font>
+					</h6>
+					</div>	
+		    </div>
 		    </div>
 		</div>
-		<ul class="box2">
-			<li class="li1"><a href="#">首页</a></li>
-			<li class="li1"><a href="https://baike.baidu.com/item/湘潭大学吉他协会/4064024?fr=aladdin#1">吉协介绍</a></li>
-			<li class="li1"><a href="http://weibo.com/p/1002063333670900/home?from=page_100206&mod=TAB&is_all=1">吉协官方微博</a></li>
-		</ul>
-		<div class="box3">
-			<div class="introduce1">
-				<h2 class="introduce1-title">吉他介绍</h2>
-				<div class="introduce1-picture">
-					<img src="img/106-1F51G1510cE.jpg" />
-				</div>
-				<div class="introduce1-text">
-					<p1>
-						（英语：guitar），又译六弦琴，是一种弹拨乐器，形状与提琴相似，通常有六根弦。其面板与背板都是平的，琴身腰部无角而往里凹。琴颈很长，指板上有弦枕并装有很多窄而稍向上凸起的金属制的横格，称之为「品」，它把琴弦划分为许多半音。
-					</p1>
-					<br />
-					<p2>
-						被用于多种音乐风格， 它在流行音乐、摇滚音乐、蓝调、民歌、佛朗明哥中常被视为主要乐器。吉他亦有被于用古典音乐，有大量的独奏曲， 室内乐和管弦乐中偶有使用。它通常有六弦，但亦有四弦、八弦、十弦和十二弦。吉他主要有两大类：一是歴史悠史、以木制共鸣箱扩音的木吉他，二是二十世纪被发明、以电扩音器扩音的电吉他。木吉他通常被用于古典音乐、民间音乐及流行音乐。　电吉他则通常被用于、摇滚音乐、蓝调及流行音乐。电吉他的发明对西方流行文化及音乐有重要影响。
-					</p2>
-				</div>
-			</div>
-			<div class="introduce2">
-				<h3 class="introduce2-title">尤克里里</h3>
-				<div class="introduce2-picture">
-					<img src="img/timg.jpg" />
-				</div>
-				<div class="introduce2-text">
-					<p3>
-						Ukulele即夏威夷小吉他，在港台等地一般译作乌克丽丽，在大陆一般习惯称为尤克里里，是一种四弦夏威夷的拨弦乐器，发明于葡萄牙盛行于夏威夷，归属在吉他乐器一族。
-					</p3>
-					<br />
-					<br />
-					<li class="li2"><a href="https://baike.baidu.com/item/尤克里里/805901?fr=aladdin">尤克里里更多详情请戳</a></li>
-					<br />
-					<li class="li2"><a href="https://baike.baidu.com/item/吉他/185">吉他更多详情请戳</a></li>
-				</div>
-			</div>
-		</div>
-		<div class="box4">
-			<div class="box4left">
-				<div class="postbar">
-				    <h4 class="postbartitle">贴吧</h4>
-				    <li class="li3"><a href="http://tieba.baidu.com/f?kw=%CF%E6%CC%B6%B4%F3%D1%A7&fr=ala0&tpl=5">湘潭大学贴吧</a></li>
-				    <br />
-				    <li class="li3"><a href="https://tieba.baidu.com/f?kw=湘潭大学吉他协会&fr=fenter&prequery=湘潭大学吉他协会吧">湘潭大学吉他协会贴吧</a></li>
-				    <br />
-				    <img src="img/QQ图片20171022163528.png" />
-			    </div>
-			    <div class="box4leftpicture">
-			    	<img src="img/0EA39A598113E157370D8669357A90DC.png" />
-			    </div>
-			</div>
-			<div class="box4middle">
-				<div class="box4middlenews">
-					<h5 class="box4middlenewstitle">通知</h5>
-					<br />
-					<a class="news1" href="#">1.各位可爱的会员小朋友：如果你有一些十分喜欢的歌（指弹;民谣；后摇；摇滚不等）想让吉协官Q推送，可以和宣传部的干事或者部长联系哦，吉协颜值最高的宣传部会尽量帮你们写好推文推送的（也可以自己写）。</a>
-					<br />
-					<a class="news2" href="http://cn.mikecrm.com/QqeS9C8">2.这是一个面向会员长期收集对吉协或个人建议箱，或者可以把它当成一个树洞，反馈的越多得到的越多哦。（点开）</a>
-					<br />
-					<a class="news3" href="#">3.大家在购琴期间一定要谨防琴贩子，因为没有售后容易买到假货。也要警惕校园周边其他不正规琴行售卖劣质琴。</a>
-	                <br />
-	                <a class="news4" href="#">4.吉协将与声协联手为大家如其开展零基础免费教学活动，考虑到新手可能有需要购买吉他，我们已经提前筛选过琴行并最终选定青鸟琴行行为合作琴行，并与之有协议，万一琴真的有什么质量问题，必须给予退换 。青鸟琴行承诺只要出示吉协和声协的会员证明，即可购琴立减100元，有意向报名系统性学琴者可再减80。</a>			
-				</div>
-			</div>
-		</div>
-		<div class="box5">
-			<div class="box5picture1">
-				<img src="img/2655FD6D2FE750D3C3478AA8107CB0D8_看图王.png" />
-			</div>
-			<h5 class="box5text">社团活动</h5>
-			<div class="box5picture2">
-				<img src="img/39E578FA24F4C13E81E5C987DD2F20B0.png" />
-			</div>
-			<h5 class="box5text">社团活动</h5>
-			<div class="box5picture3">
-				<img src="img/62EF2EE564CDA111144F636079F92E9A.png" />
-			</div>
-			<h5 class="box5text">社团活动</h5>
-		</div>
-		<div class="box6">
-			<h2 class="box6title">社团活动</h2>
-			<div class="box6number">01|在学校内的社团活动</div>
-			<br />
-			<div class="box6number">02|在学校内的社团活动</div>
-			<br />
-			<div class="box6number">03|在学校内的社团活动</div>
-			<br />
-			<div class="box6number">04|在学校内的社团活动</div>
-			<br />
-			<div class="box6number">05|在学校内的社团活动</div>
-			<br />
-			<div class="box6number">06|在学校内的社团活动</div>
-			<br />
-			<div class="box6number">07|在学校内的社团活动</div>
-			<br />
-			<div class="box6number">08|在学校内的社团活动</div>
-			<br />
-			<div class="box6number">09|在学校内的社团活动</div>
-		</div>
-		<div class="box7">
-			<marquee  onmouseover=stop()  onmouseout=start()  scrollAmount=3  loop=infinite  deplay="0">
-				<img src="img/4495775E57C5A0A1C0B2A5D6920B5C74_看图王.png" />
-				<img  src="img/8A23D72FB240A8C4B534C7DD4B3D72FA_看图王.png" />
-				<img src="img/47ecc332b58bccb2.webp" />
-				<img src="img/77b5e63850d348bcae65b4b5b7e7d5bd.png" />
-				<img src="img/0E561038B3DB70289C6FC8EF59D1DE49.png" />
-				<img src="img/FD89525295DC0B4C26656F1202672EB6_看图王.png" />
-			</marquee>
-		</div>
-	</body>
-</html>
+	<div style="text-align: right;position: fixed;z-index:9999999;bottom: 0; width: 100%;cursor: pointer;line-height: 0;"><a title="Hosted on free web hosting 000webhost.com. Host your own website for FREE." target="_blank" href="https://www.000webhost.com/?utm_source=000webhostapp&amp;utm_campaign=000_logo&amp;utm_medium=website_xiangdalanqiushe&amp;utm_content=footer_img"><img src="https://cloud.githubusercontent.com/assets/23024110/20663010/9968df22-b55e-11e6-941d-edbc894c2b78.png" alt="www.000webhost.com"></a></div>
+
+</body></html>
